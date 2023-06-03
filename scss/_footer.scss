@@ -1,0 +1,124 @@
+
+/*-------------------------------------------------- */
+/* Footer style
+/*------------------------------------------------- */
+
+footer.template-footer {
+	position: relative;
+	div.instagram-line {
+		border-top: 1px solid #2e2e2e;
+		ul.insta-list {
+			padding: 0;
+			margin: 0;
+			overflow: hidden;
+			li {
+				display: block;
+				float: left;
+				width: 12.5%;
+				border: none;
+				@include tablet {
+					width: 25%;
+				}
+				a {
+					display: block;
+					img {
+						width: 100%;
+						height: auto;
+					}
+					&:hover {
+						opacity: 0.7;
+					}
+				}
+			}
+		}
+	}
+	div.widget-part-area {
+		display: flex;
+		align-items: center;
+		@include tablet {
+			flex-wrap: wrap;
+			.footer-widget-line:first-child {
+				display: none;
+			}
+		}
+		.footer-widget-line {
+			width: 25%;
+			min-height: 440px;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding-left: 90px;
+			border-left: 1px solid #242424;
+			background: #1f1f1f;
+
+			@include desktop {
+				padding-left: 30px;
+				min-height: 360px;
+			}
+			@include tablet {
+				width: 33.3333%;
+			}
+			@include mobile {
+				width: 100%;
+				min-height: 40px;
+				padding: 30px;
+				border-left: none;
+				border-bottom: 1px solid #242424;
+			}
+			.image-widget {
+				text-align: center;
+				margin-left: -90px;
+				margin-right: -1px;
+				img {
+					max-width: 84px;
+					margin: 0 auto;
+				}
+			}
+			h5 {
+				color: rgba(#ffffff, 0.8);
+				font-size: 16px;
+				font-weight: 300;
+				margin: 0 0 25px;
+				text-transform: uppercase;
+			}
+			ul.custom-list {
+				padding: 0;
+				margin: 0;
+				li {
+					display: block;
+					a {
+						color: #ffffff;
+						font-size: 15px;
+						line-height: 30px;
+						text-decoration: underline !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+a.go-top {
+	position: absolute;
+	top: -90px;
+	right: 30px;
+	width: 60px;
+	height: 60px;
+	color: #ffffff;
+	font-size: 30px;
+	line-height: 60px;
+	text-align: center;
+	background: $primary-color;
+	&:hover {
+		opacity: 0.8;
+	}
+	@include tablet {
+		display: none;
+	}
+}
+
+
+
+
+
+

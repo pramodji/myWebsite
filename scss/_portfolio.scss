@@ -1,0 +1,330 @@
+
+/*-------------------------------------------------- */
+/* Portfolio style
+/*------------------------------------------------- */
+
+section.filter-section {
+	background-image: url('../upload/portfolio/portfolio-filter-bg.png');
+	background-color: rgba(80,80,80,0.2);
+    background-blend-mode: multiply;
+    background-size: cover;
+	text-align: center;
+	ul.filter {
+		padding: 0;
+		margin: 0;
+		overflow: hidden;
+		li {
+			display: inline-block;
+			padding: 70px 0;
+			border-right: 1px solid #5e5e5e;
+			width: 160px;
+			text-align: center;
+			&:first-child {
+				border-left: 1px solid #5e5e5e;
+			}
+			@include large_desktop {
+				width: 130px;
+				padding: 50px 0;
+			}
+			@include desktop {
+				width: auto;
+				padding: 20px;
+			}
+			@include tablet {
+				width: 25%;
+				float: left;
+				border-bottom: 1px solid #5e5e5e;
+				border-left: none !important;
+			}
+			@include mobile {
+				width: 33.3333%;
+				float: left;
+			}
+			a {
+				display: inline-block;
+				padding: 16px 0;
+				color: #f8f8f8;
+				font-size: 16px;
+				font-family: $font-default;
+				position: relative;
+				&:before {
+					content: '';
+					position: absolute;
+					bottom: 0;
+					left: 50%;
+					margin-left: -15px;
+					width: 30px;
+					height: 3px;
+					@include transition(0.2s);
+					background: transparent;
+				}
+				&.active:before {
+					background: $primary-color;
+				}
+			}
+		}
+	}
+}
+
+section.portfolio-section {
+	padding: 140px 0;
+	@include desktop {
+		padding: 100px 0;
+	}
+	@include tablet {
+		padding: 60px 15px;
+	}
+	@include mobile {
+		padding: 30px 15px;
+	}
+	&.fullscreen {
+		padding: 0;
+	}
+	.portfolio-box {
+		margin: -15px;
+		.portfolio-post {
+			width: 33.3333%;
+			padding: 15px;
+			@include desktop {
+				width: 50%;
+			}
+			@include mobile {
+				width: 100%;
+			}
+		}
+		&.colum4 {
+			.portfolio-post {
+				width: 25%;
+				@include desktop {
+					width: 50%;
+				}
+				@include mobile {
+					width: 100%;
+				}
+				&.with-large-size {
+					width: 50%;
+
+					@include mobile {
+						width: 100%;
+					}
+				}
+			}
+		}
+		&.colum5 {
+			.portfolio-post {
+				width: 20%;
+				@include desktop {
+					width: 25%;
+				}
+				@include tablet {
+					width: 33.3333%;
+				}
+				@include mobile {
+					width: 100%;
+				}
+			}
+		}
+		&.joined {
+			margin: 0;
+			.portfolio-post {
+				padding: 0;
+			}
+		}
+	}
+}
+
+/* Common style */
+.portfolio-post figure {
+	position: relative;
+	float: left;
+	overflow: hidden;
+	margin: 0;
+	width: 100%;
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0,0.5);
+		z-index: 2;
+	}
+}
+
+.portfolio-post figure img {
+	position: relative;
+	display: block;
+	width: 110%;
+}
+
+.portfolio-post figure figcaption {
+	padding: 30px;
+	color: #fff;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	z-index: 3;
+}
+
+.portfolio-post figure figcaption::before,
+.portfolio-post figure figcaption::after {
+	pointer-events: none;
+}
+
+.portfolio-post figure figcaption,
+.portfolio-post figure figcaption > a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.portfolio-post figure.hover2 figcaption {
+	bottom: 10px;
+	left: 10px;
+	right: 10px;
+	top: inherit;
+	width: auto;
+	height: auto;
+	background-color: #3d3d3d;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.portfolio-post figure figcaption > a {
+	z-index: 1000;
+	top: 30px;
+	left: initial;
+	right: 30px;
+	width: 60px;
+	height: 60px;
+	@include border-radius(50%);
+	border: 2px solid #ffffff;
+	line-height: 56px;
+	text-align: center;
+	span {
+		position: relative;
+		z-index: 2;
+		font-size: 20px;
+		line-height: 60px;
+		color: #ffffff;
+	    @include transition(0.2s);
+	}
+	&:hover span {
+		color: $primary-color;
+	}
+	&:after {
+	    content: '';
+	    position: absolute;
+	    top: 50%;
+	    bottom: 50%;
+	    left: 50%;
+	    right: 50%;
+	    background-color: #fff;
+	    @include border-radius(50%);
+	    @include transition(0.2s);
+	}
+	&:hover:after {
+	    top: 0%;
+	    bottom: 0%;
+	    left: 0%;
+	    right: 0%;
+	}
+}
+
+.portfolio-post figure.hover2 figcaption > a {
+	border: 5px solid $primary-color;
+	background-color: #3d3d3d;
+	top: -30px;
+	right: 20px;
+	span {
+		line-height: 50px;
+	}
+}
+
+.portfolio-post figure h4,
+.portfolio-post figure p {
+	margin: 0;
+	a {
+		color: #ffffff;
+		&:hover {
+			color: $primary-color;
+		}
+	}
+}
+
+/*---------------*/
+/***** Milo *****/
+/*---------------*/
+
+figure.effect-milo {
+	background: #888888;
+}
+
+figure.effect-milo img {
+	max-width: none;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: translate3d(-30px,0,0) scale(1.12);
+	transform: translate3d(-30px,0,0) scale(1.12);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+figure.effect-milo:hover img {
+	opacity: 0;
+	-webkit-transform: translate3d(0,0,0) scale(1);
+	transform: translate3d(0,0,0) scale(1);
+}
+
+figure.effect-milo.hover2:hover img {
+	opacity: 1;
+}
+
+figure.effect-milo figcaption > a {
+	opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: translate3d(-40px,0,0);
+	transform: translate3d(-40px,0,0);
+}
+
+figure.effect-milo:hover figcaption > a {
+	opacity: 1;
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+figure.effect-milo p {
+	color: #ffffff;
+	font-size: 14px;
+	text-transform: lowercase;
+}
+
+figure.effect-milo.hover2 p {
+	font-size: 13px;
+	text-transform: uppercase;
+}
+
+.portfolio-post figure.effect-milo.hover2 h4 {
+	font-size: 16px;
+	margin-top: 2px;
+}
+
+figure.effect-milo.hover2 figcaption > a {
+	-webkit-transform: translate3d(40px,0,0);
+	transform: translate3d(40px,0,0);
+}
+
+figure.effect-milo.hover2:hover figcaption > a {
+	-webkit-transform: translate3d(0,0,0);
+	transform: translate3d(0,0,0);
+}
+
+
+
+

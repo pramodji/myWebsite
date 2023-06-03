@@ -1,0 +1,130 @@
+
+/*-------------------------------------------------- */
+/* Tabs, Collapse style
+/*------------------------------------------------- */
+
+section.tabs-collapse-section {
+	padding: 130px 0;
+	background: #363636 url('../upload/about/service-bg.jpg') center bottom no-repeat;
+	background-size: cover;
+	.nav-tabs {
+		border-bottom: 1px solid #515151;
+		border-top: 1px solid #515151;
+		li {
+			width: 33.33333%;
+			text-align: center;
+			border-right: 1px solid #515151;
+			&:first-child {
+				border-left: 1px solid #515151;
+			}
+			button {
+				width: 100%;
+				color: #ffffff;
+				font-size: 16px;
+				font-weight: 400;
+				font-family: $font-default;
+				padding: 14px 0;
+				display: block;
+				@include border-radius(0px);
+				&:hover {
+					background-color: $primary-color;
+					border-color: transparent;
+				}
+			}
+		}
+	}
+	.nav-tabs .nav-item.show .nav-link,
+	.nav-tabs .nav-link.active {
+		background: #515151;
+		color: #ffffff;
+		border-color: #515151;
+	}
+	.tab-content {
+		border: 1px solid #515151;
+		border-top: none;
+		@include tablet {
+			margin-bottom: 30px !important;
+		}
+		.tab-pane {
+			padding: 30px;
+			@include mobile {
+				padding-bottom: 1px !important;
+			}
+			img {
+				width: 100%;
+				height: auto;
+				@include mobile {
+					margin-bottom: 30px !important;
+				}
+			}
+			p {
+				margin-bottom: 0;
+				@include mobile {
+					margin-bottom: 30px !important;
+				}
+			}
+		}
+	}
+	.accordion-button {
+		border: 1px solid #515151;
+		color: #ffffff;
+		font-size: 16px;
+		font-weight: 400;
+		font-family: $font-default;
+		background-color: transparent;
+		border-radius: 0px !important;
+		padding: 0;
+		outline: none;
+		box-shadow: none !important;
+		i {
+			float: left;
+			display: inline-block;
+			width: 48px;
+			height: 48px;
+			text-align: center;
+			line-height: 48px;
+			color: #ffffff;
+			margin-left: -1px;
+			margin-top: -1px;
+			margin-bottom: -1px;
+			background-color: #515151;
+			@include transition(0.2s);
+		}
+		span {
+			padding: 0 20px;
+		}
+		&:after {
+			display: none;
+		}
+	}
+	.accordion-button:not(.collapsed) {
+		i {
+			background-color: $primary-color;
+		}
+	}
+	.accordion-header {
+		margin-bottom: 2px;
+		@include border-radius(0px);
+	}
+	.accordion-collapse {
+		margin-bottom: 2px;
+		border-width: 1px;
+		border-color: #515151;
+		.accordion-body {
+			padding: 22px 30px;
+		}
+		p {
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+

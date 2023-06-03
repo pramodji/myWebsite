@@ -1,0 +1,382 @@
+
+/*-------------------------------------------------- */
+/* slider serction style
+/*------------------------------------------------- */
+
+section.slider-section {
+	padding-top: 100px;
+
+	&.slider-style2 {
+		padding-top: 230px;
+		margin-bottom: 130px;
+		@include tablet {
+			padding-top: 100px;
+		}
+		@include mobile {
+			padding-top: 100px;
+		}
+		.tp-caption.NotGeneric-Title {
+			font-weight: 700;
+			text-transform: inherit;
+			span.big-number {
+				display: inline-block;
+				width: 140px;
+				height: 140px;
+				background-color: #242424;
+				color: #ffffff;
+				text-align: center !important;
+				font-size: 90px !important;
+				line-height: 140px !important;
+			}
+		}
+	}
+
+	&.fullscreen-style {
+		padding-top: 0;
+
+		.tp-caption.NotGeneric-SubTitle {
+			span {
+				padding: 0;
+				background-color: transparent;
+				position: relative;
+				z-index: 999999;
+				padding-left: 50px !important;
+				&:before {
+					content: '';
+					display: inline-block;
+					width: 30px;
+					height: 2px;
+					background: $primary-color;
+					position: absolute;
+					top: 50%;
+					left: 0px;
+					z-index: 9999;
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+			a {
+				color: #ffffff;
+				padding: 10px 28px;
+				border: 2px solid #fff;
+				@include border-radius(0px);
+				@include transition(0.2s);
+				text-transform: uppercase;
+				font-weight: 400;
+				&:hover {
+					background-color: $primary-color;
+					border-color: transparent;
+				}
+			}
+		}
+		.tp-bullets {
+			height: 70px !important;
+			background-color: #3d3d3d;
+			width: 170px !important;
+			display: flex !important;
+			justify-content: center !important;
+			align-items: center !important;
+            @include tablet {
+                transform: matrix(1, 0, 0, 1, 0, -70) !important;
+            }
+			@include mobile {
+				display: none !important;
+			}
+			.tp-bullet {
+				position: relative !important;
+				left: inherit !important;
+				height: 10px;
+				width: 10px;
+				border: 1px solid #5f5f5f;
+				@include border-radius(50%);
+				background-color: transparent;
+				margin: 0 10px;
+				&.selected {
+					border-color: transparent;
+					background-color: $primary-color;
+					&:after {
+						content: '';
+						position: absolute;
+						top: -9px;
+						left: -9px;
+						right: -9px;
+						bottom: -9px;
+						border: 2px solid #878787;
+						@include border-radius(50%);
+					}
+				}
+			}
+		}
+		.tp-static-layer {
+			color: #ffffff;
+			width: 60px;
+			height: 60px;
+			border: 10px solid rgba(#ffffff,0.5);
+			@include border-radius(50%);
+			text-align: center;
+			line-height: 40px;
+			font-size: 12px;
+		}
+		li {
+			counter-increment: section;
+		}
+		li:after {
+			content: "0" counter(section);
+			position: absolute;
+			top: 130px;
+			right: 30px;
+			color: rgba(#ffffff, 0.15);
+			font-size: 90px;
+			font-family: $font-default;
+			font-weight: 400;
+			width: 150px;
+			text-align: center;
+			line-height: 140px;
+			border: 1px solid rgba(#ffffff, 0.3);
+
+            @include tablet {
+                display: none;
+            }
+		}
+
+		li:before {
+			content: '';
+			position: absolute;
+			bottom: 60%;
+			top: 272px;
+			right: 30px !important;
+			left: initial !important;
+			visibility: visible;
+			width: 1px;
+			display: inline-block;
+			z-index: 2;
+			background: #ffffff;
+			opacity: 0.3 !important;
+
+            @include tablet {
+                display: none;
+            }
+		}
+	}
+	&.with-back-overlay {
+
+		.slotholder:after {
+			display: block;
+			width: 50% !important;
+			height: 100% !important;
+			background-color: rgba(#000000, 0.95);
+			background-blend-mode: multiply;
+			background-size: cover;
+			background-image: url('../upload/home10/bg2.png');
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 17;
+			margin-left: 100px;
+			@include tablet {
+				width: 60% !important;
+				margin-left: 0;
+			}
+			@include mobile {
+				width: 100% !important;
+			background-color: rgba(#000000, 0.3);
+			}
+		}
+	}
+	.progress-holder {
+		margin: 33px 170px 33px 300px;
+		position: relative;
+		height: 4px;
+		border-left: 1px solid #3d3d3d;
+		border-right: 1px solid #3d3d3d;
+		background-color: #3d3d3d;
+		border-radius: 2px;
+		@include tablet {
+			margin: 33px 170px 33px 200px;
+		}
+		@include mobile {
+			margin: 33px 170px 33px 33px;
+		}
+	}
+	.tp-bannertimer {
+		background-color: $primary-color !important;
+		bottom: 1px !important;
+	}
+	.custom-navigator-bar {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 70px;
+		left: 0;
+		background-color: #272727;
+		z-index: 20;
+	}
+
+	.tp-caption.NotGeneric-Title {
+		font-family: $font-default;
+		font-weight: 100;
+		text-transform: uppercase;
+		letter-spacing: inherit;
+	}
+
+	.tp-caption.NotGeneric-SubTitle {
+		font-family: $font-default;
+		font-weight: 700;
+		letter-spacing: inherit;
+		span {
+			display: inline-block;
+			font-weight: 600;
+			padding: 8px 14px;
+			background-color: $primary-color;
+		}
+	}
+	.tparrows {
+		width: 70px;
+		height: 70px;
+		background-color: #3d3d3d;
+		border: 10px solid #242424;
+		@include transition(0.2s);
+		&:before {
+			line-height: 50px;
+		}
+		&.tp-leftarrow:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: -10px;
+			width: 1px;
+			background-color: #3a3a3a;
+		}
+		&:hover {
+			background-color: $primary-color;
+		}
+	}
+}
+
+#rev_slider_41_1_wrapper {
+	padding-left: 100px !important;
+	background-color: transparent !important;
+	.slotholder:after {
+		display: none;
+	}
+	@include tablet {
+		padding-left: 0 !important;
+	}
+	.tparrows {
+		width: 60px;
+		height: 60px;
+		color: #ffffff !important;
+		background-color: $primary-color;
+		border: none;
+		@include transition(0.2s);
+		&:before {
+			color: #ffffff !important;
+			line-height: 46px;
+		}
+		&.tp-leftarrow:after {
+			display: none;
+		}
+	}
+	.FoodCarousel-Button {
+		color: #ffffff;
+		border: none;
+		background-color: #3d3d3d;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 14px;
+		font-family: $font-default;
+	}
+	.erinyen .tp-thumb .tp-thumb-over {
+		background-color: rgba(0,0,0, 0.7);
+	}
+	.erinyen .tp-thumb.selected .tp-thumb-over,
+	.erinyen .tp-thumb:hover .tp-thumb-over {
+		background-color: rgba(61,61,61, 0.9);
+	}
+	.erinyen .tp-thumb-more:before {
+		display: none;
+	}
+	.erinyen .tp-thumb-title {
+		font-size: 13px;
+		font-weight: 700;
+		font-family: $font-default;
+		line-height: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		color: #ffffff;
+		opacity: 0.4;
+	}
+	.erinyen .tp-thumb.selected .tp-thumb-title,
+	.erinyen .tp-thumb:hover .tp-thumb-title {
+		color: #ffffff;
+		opacity: 1;
+	}
+	.tp-caption.FoodCarousel-Content,
+	.FoodCarousel-Content {
+		background-color: #272727;
+		color: #ffffff;
+	}
+	.tp-caption.FoodCarousel-CloseButton, .FoodCarousel-CloseButton {
+		background-color: $primary-color;
+		color: #ffffff;
+		border-radius: 0px;
+	}
+	span.foodcarousel-headline {
+		display: inline-block;
+		font-size: 24px;
+		font-family: $font-default;
+		font-weight: 700;
+		margin-bottom: 20px;
+	}
+	p.slide-line {
+		display: block;
+		border: 1px solid #3d3d3d;
+		border-bottom: none;
+		margin: 0;
+		&.last-slide-line {
+			border-bottom: 1px solid #3d3d3d;
+			margin-bottom: 20px;
+		}
+		span {
+			display: inline-block;
+			color: #ffffff;
+			font-size: 15px;
+			font-weight: 300;
+			line-height: 50px;
+			&.data-name {
+				width: 150px;
+				font-weight: 700;
+				text-transform: uppercase;
+				background-color: #3d3d3d;
+				padding: 0 30px;
+				margin-right: 30px;
+			}
+		}
+	}
+}
+
+
+.tp-caption.tp-hidden-caption, .tp-forcenotvisible, .tp-hide-revslider, .tp-parallax-wrap.tp-hidden-caption {
+	@include mobile {
+		display: block !important;
+		visibility: visible !important;
+	}
+}
+
+.tp-static-layers {
+	@include mobile {
+		display: none !important;
+	}
+}
+
+@include mobile {
+	.slider-style2 .tp-leftarrow {
+		transform: matrix(1, 0, 0, 1, -140, -70) !important;
+	}
+
+	.slider-style2 .tp-rightarrow {
+		transform: matrix(1, 0, 0, 1, -70, -70) !important;
+	}
+}

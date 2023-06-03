@@ -1,0 +1,39 @@
+
+/*-------------------------------------------------*/
+/* =  Responsive Part
+/*-------------------------------------------------*/
+
+@media (max-height: 800px) {
+	header .header-line {
+		div.social-line {
+			padding: 15px 0;
+            height: calc(100vh - 300px);
+            &.active {
+                height: calc(100vh - 400px);
+            }
+		}
+		div.copyright-line {
+			height: 200px;
+		}
+	}
+}
+
+@media (max-width: 1700px) {
+
+}
+
+@media (max-width: 1199px) {
+
+}
+
+@media (max-width: 991px) {
+
+}
+
+@media (max-width: 767px) {
+
+}
+
+@media (max-width: 600px) {
+
+}
