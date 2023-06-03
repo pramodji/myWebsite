@@ -1,0 +1,25 @@
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Hind|Pacifico');
+
+body {
+    font-family:'Hind', sans-serif;
+    font-weight:400;
+}
+.alt-font {
+    font-family:'Pacifico', cursive;
+}
+
+.main-font {
+    font-family:'Hind', sans-serif;
+}
+.nav>li,.pushmenu .push_nav li{
+    font-family:'Hind', sans-serif !important;
+}
+.pushmenu .push_nav > li > a > span{
+    margin-top: 0;
+}
+.portfolio .filtering span{
+    font: 400 12px/32px 'Hind', sans-serif;
+}
